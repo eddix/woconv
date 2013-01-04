@@ -1,6 +1,6 @@
 # woconv
 
-woconv是Wo纷享项目中的视频转码工具，基于libav项目中的avconv命令。
+woconv是一个简单的视频转码工具，基于libav项目中的avconv命令。
 
 使用方法：
 
