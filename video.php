@@ -44,7 +44,7 @@ if(isset($_SERVER['HTTP_RANGE'])) {
     }
     /* Check the range and make sure it's treated according to the specs.
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
-     *                */
+     **/
     // End bytes can not be larger than $end.
     $c_end = ($c_end > $end) ? $end : $c_end;
 
