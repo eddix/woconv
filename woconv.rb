@@ -11,7 +11,7 @@
 $avconv_exec = "avconv"
 
 # parameters for avconv
-$avconv_param = "-vcodec libx264 -acodec aac -strict experimental -y"
+$avconv_param = "-vcodec libx264 -acodec libfaac -strict experimental -y"
 
 # Read command line parameters
 $input_file = ARGV.shift

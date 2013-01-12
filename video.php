@@ -16,6 +16,10 @@ $grid = $db->getGridFS();
 
 $video = $grid->findOne($filename);
 
+if ($video == NULL) {
+    die("Video is not exists");
+}
+
 $size = $video->getSize();
 $length = $size;
 $start = 0;
