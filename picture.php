@@ -16,6 +16,7 @@ $grid = $db->getGridFS();
 
 $video = $grid->findOne($filename);
 if ($video == NULL) {
+    header("HTTP/1.0 404 Not Found");
     die("Picture is not exists");
 }
 
