@@ -1,7 +1,7 @@
 <?php
-/* video.php
+/* picture.php
  *
- * Retrieving video from gridfs base on mongodb
+ * Retrieving picture from gridfs base on mongodb
  *
  * Author: chenxin <chenxin@smapp.hk>
  * Date: 2012-12-16
@@ -14,22 +14,16 @@ $mongo = new MongoClient();
 $db = $mongo->pictures;
 $grid = $db->getGridFS();
 
-$video = $grid->findOne($filename);
-if ($video == NULL) {
+$picture = $grid->findOne($filename);
+if ($picture == NULL) {
     header("HTTP/1.0 404 Not Found");
     die("Picture is not exists");
 }
 
-$length = $video->getSize();
-$stream = $video->getResource();
+$length = $picture->getSize();
 
-header("Content-type: image/jpeg");
+header("Content-type: " . $picture->file['filetype']);
 header("Content-Length: $length");
+echo $picture->getBytes();
 
-while (!feof($stream) && ($p = ftell($stream)) <= $end) {
-    echo fread($stream, 8192);
-    flush();
-}
-
-fclose($stream);
 ?>
